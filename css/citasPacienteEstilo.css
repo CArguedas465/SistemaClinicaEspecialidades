@@ -1,0 +1,40 @@
+#content{
+    padding: 15px 35px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 45px;
+}
+
+#content input, #content select, #content textarea {
+    border-radius: 50px;
+    border: none;
+    background-color: #ebebeb;
+    transition: background-color 0.3s ease-in-out;
+    height: 30px;
+    margin: 10px;
+}
+
+#content textarea {
+    width: 100%;
+    height: 30%;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#content input[type='submit']{
+    float: right;
+    width: 85px;
+    background-color: #097D28;
+    color: white;
+    letter-spacing: 0.5px;
+}
+
+#content input[type='date']{
+    width: 12%;
+    text-align: center;
+}
+
+#content input:focus, #content select:focus, #content textarea:focus {
+    outline: none;
+    background-color: #cbefc9;
+}

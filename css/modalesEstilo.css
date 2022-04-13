@@ -1,0 +1,59 @@
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0; top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(255,255,255,0.4);
+    animation-name: modalOpen;
+    animation-duration: 0.5s;
+}
+
+.modal-content{
+    background-color: #f4f4f4;
+    margin: 10% auto;
+    padding: 20px;
+    width: 70% !important;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+    border-radius: 20px !important;
+    animation-name: modalContentOpen; 
+    animation-duration: 0.5s;
+}
+
+.closeButton{
+    color: #ccc;
+    float: right;
+    font-size: 30px;
+    transition: color 0.2s ease-in;
+}
+
+.closeButton:hover, .closeButton:focus{
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes modalContentOpen{
+    from{
+        opacity: 0;
+    } 
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalOpen{
+    from{
+        background-color: rgba(255,255,255,0);
+    } 
+    to {
+        background-color: rgba(255,255,255,0.4);
+    }
+}
+
+.modal-content span{
+    display: block;
+    text-align: right;
+}

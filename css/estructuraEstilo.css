@@ -1,0 +1,96 @@
+html{
+    height: 100%;
+    margin: 0px;
+}
+
+body{
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+#logo{
+    border: 2px dotted white;
+    display: inline-block;
+    margin: 10px;
+    border-radius: 70px;
+}
+
+#logo img{
+    width: 65px;
+    padding: 7px;
+}
+
+nav{
+    width: 7.5%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    background-color: #061A9F;
+    overflow-wrap: normal;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin: 20px 0px;
+    padding: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    transition: background-color 0.2s ease-in 50ms;
+    font-family: 'Calibri', 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+
+nav a img {
+    width: 45px;
+    height: 40px;
+    transition: transform 0.1s ease-in;
+    padding: 15px;
+}
+
+nav a img:hover{
+    transform: scale(1.3);
+    background-color: #909ced4d;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+#iconosNavegacion {
+    margin-top: 35px;
+}
+
+section{
+    float: left;
+    width: 92.5%;
+    height: 100%;
+    display: inline;
+    border: 1px solid red;
+}
+
+section h1, h2 {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 45px;
+    font-weight: 375;
+    color: #061A9F;
+}
+
+.contenedorConScroll{
+    overflow-y: auto;
+    height: 500px;
+}
+
+.contenedorConScroll::-webkit-scrollbar{
+    width: 10px;
+}
+
+.contenedorConScroll::-webkit-scrollbar-thumb{
+    background-color: #393a3e7f;
+    border-radius: 50px;
+}
