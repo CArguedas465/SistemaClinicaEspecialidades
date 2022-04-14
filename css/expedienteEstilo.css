@@ -4,7 +4,7 @@
     margin: 45px;
 }
 
-input, select {
+#content input, #content select {
     border-radius: 50px;
     border: none;
     background-color: #ebebeb;
@@ -19,7 +19,7 @@ select{
 }
 
 #content input{
-    width: 50%;
+    width: 45.5%;
 }
 
 #content input[type='button']{
@@ -34,7 +34,7 @@ select{
     cursor: pointer;
 }
 
-input:focus, select:focus {
+#content input:focus, #content select:focus {
     outline: none;
     background-color: #cbefc9;
 }
@@ -102,58 +102,86 @@ tbody tr td:last-of-type{
     border-bottom-right-radius: 10px;
 }
 
-#modalDetalleCita hr{
-    height: 3px;
-    border-radius: 5px;
-    background-color: #6769788a;
+#modalModificacionExpediente .modal-content{
+    margin: 3% 18%;
+    height: 84%;
+    overflow: hidden;
 }
 
-#modalDetalleCita .modal-content{
-    margin: 5% 15%;
-    width: 75% !important;
+.modal-content h2 {
+    font-size: 30px;
+    text-align: left;
 }
 
-#modalDetalleCita h2 { 
-    margin-bottom: 30px;
+#modalModificacionExpediente form{
+    height: 100%;
 }
 
-#modalDetalleCita form{
+#contenedorRadioButton{
+    text-align: right;
+    float: left;
+    width: 30%;
+    height: 85%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#contenedorDetalleTratamiento{
+    float: right;
+    width: 68%;
+    height: 85%;
+}
+
+#contenedorRadioButton input[type='radio'], #contenedorRadioButton label {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+#contenedorRadioButton label, #contenedorDetalleTratamiento label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #061A9F;
+}
+
+#contenedorRadioButton textarea, #contenedorDetalleTratamiento textarea{
+    border-radius: 10px;
     text-align: center;
-}
-
-#modalDetalleCita form input{
-    text-align: center;
+    border: none;
+    background-color: #ebebeb;
+    transition: background-color 0.3s ease-in-out;
+    height: 30px;
     margin: 10px;
+    width: 70%;
+    height: 20%;
 }
 
-#modalDetalleCita input[type='submit'], #modalDetalleCita input[type='button']{
-    width: 15%;
+#contenedorRadioButton textarea:focus{
+    outline: none;
+    background-color: #cbefc9;
+}
+
+#contenedorDetalleTratamiento textarea {
+    width: 96.5%;
+    height: 82%;
+}
+
+#contenedorDetalleTratamiento textarea:focus{
+    outline: none;
+    background-color: #cbefc9;
+}
+
+
+
+#contenedorDetalleTratamiento input[type='button']{
+    background: #ebebeb;
+    width: 10%;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
     transition: background-color 0.2s ease-in;
+    float: right;
 }
 
-#modalDetalleCita input[value='Volver']:hover{
-    background-color: #d2cfcf;
+#contenedorDetalleTratamiento input[type='button']:hover{
+    background-color: goldenrod;
     cursor: pointer;
-}
-
-#modalDetalleCita input[value='Denegar Cita']:hover{
-    background-color: red;
     color: white;
-    cursor: pointer;
-}
-
-#modalDetalleCita input[value='Programar Cita']:hover{
-    background-color: green;
-    color: white;
-    cursor: pointer;
-}
-
-#modalDetalleCita textarea{
-    height: 200px;
-}
-
-#modalDetalleCita span{
-    position: fixed;
-    left: 90%;
-    bottom: 85%;
 }

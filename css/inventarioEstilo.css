@@ -1,0 +1,74 @@
+.contenedorConScroll{
+    height:  82%;
+    text-align: center;
+}
+
+.bloqueImagen{
+    display: inline-block;
+    width: 250px;
+    height: 270px;
+    border: 2px solid green;
+    margin: 40px;
+    margin-bottom: 0px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.bloqueImagen img {
+    width: 250px;
+    height: 180px;
+    margin-bottom: 15px;
+}
+
+.bloqueImagen label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+.bloqueImagen input[type='text']{
+    text-align: center;
+    width: 50px;
+    border-radius: 15px;
+    border: none;
+    background-color: #ebebeb;
+}
+
+.bloqueImagen input[type='button']{
+    width: 30px;
+    border-radius: 15px;
+    border: none;
+    background-color: #ebebeb;
+    transition: background-color 0.2s ease;
+}
+
+.bloqueImagen input[type='button']:hover{
+    cursor: pointer;
+    color: white;
+    background-color: gold;
+}
+
+section h1 {
+    margin: 15px;
+}
+
+section button{
+    text-align: center;
+    background: #ebebeb;
+    width: 10%;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    transition: background-color 0.2s ease-in;
+    margin-top: 5px;
+}
+
+section button:hover{
+    background-color: goldenrod;
+    cursor: pointer;
+    color: white;
+}
+
+#botonActualizarContenedor {
+    text-align: center;
+}
+

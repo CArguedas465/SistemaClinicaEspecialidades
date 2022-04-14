@@ -7,13 +7,13 @@
     width: 50%;
 }
 
-#content input[type='submit']{
+#content input[type='button']{
     width: 10.4%;
     height: 32px;
     transition: background-color 0.2s ease-in;
 }
 
-#content input[type='submit']:hover{
+#content input[type='button']:hover{
     background-color: green;
     color: white;
     cursor: pointer;
@@ -29,18 +29,51 @@ section h1 {
 }
 
 #busquedaPacientesContenedor{
-    border: 5px solid red;
+    /*border: 5px solid red;*/
     height: 300px;
     overflow: hidden;
 }
 
 #agregarPacienteContenedor{
-    border: 5px solid blue;
+    /*border: 5px solid blue;*/
     height: 300px;
     overflow: hidden;
 }
 
-input, select {
+#agregarPacienteContenedor h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    margin-top: 0px;
+    font-size: 30px;
+    margin-bottom: 0px;
+}
+
+.modal-content h2 {
+    font-size: 30px;
+    text-align: left;
+}
+
+hr{
+    height: 3px;
+    border-radius: 5px;
+    background-color: #6769788a;
+}
+
+#agregarPacienteContenedor input[type='button']{
+    float: right;
+    width: 150px;
+    background-color: #ebebeb;
+    color: black;
+    letter-spacing: 0.5px;
+}
+
+/*
+#agregarPacienteContenedor form {
+    text-align: center;
+}
+*/
+
+#busquedaPacientesContenedor input, #busquedaPacientesContenedor select {
     border-radius: 50px;
     border: none;
     background-color: #ebebeb;
@@ -49,12 +82,38 @@ input, select {
     margin: 10px;
 }
 
-select{
+#agregarPacienteContenedor input, #agregarPacienteContenedor select {
+    border-radius: 50px;
+    border: none;
+    background-color: #ebebeb;
+    transition: background-color 0.3s ease-in-out;
+    margin: 10px;
+    height: 30px;
+    width: 150px;
+}
+
+#busquedaPacientesContenedor select{
     width: 200px;
     text-align: center;
 }
 
+#busquedaPacientesContenedor input:focus, #busquedaPacientesContenedor select:focus, #busquedaPacientesContenedor textarea:focus {
+    outline: none;
+    background-color: #cbefc9;
+}
+
+#agregarPacienteContenedor input:focus, #agregarPacienteContenedor select:focus, #agregarPacienteContenedor textarea:focus {
+    outline: none;
+    background-color: #cbefc9;
+}
+
+.contenedorConScroll{
+    overflow-y: auto;
+    height: 230px; 
+}
+
 table{
+    table-layout: fixed;
     width: 100%;
     margin-top: 15px;
     border-collapse: separate;
@@ -110,3 +169,108 @@ tbody tr td:last-of-type{
     border-bottom-right-radius: 10px;
 }
 
+
+table button{
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    transition: background-color 0.2s ease-in;
+}
+
+table button:hover{
+    background-color: green;
+    cursor: pointer;
+    color: white;
+}
+
+#modalPreguntasExpediente .modal-content{
+    margin: 3% 18%;
+    height: 84%;
+    overflow: hidden;
+}
+
+#modalPreguntasExpediente form{
+    height: 100%;
+}
+
+#contenedorRadioButton{
+    text-align: right;
+    /* border: 1px solid red; */
+    float: left;
+    width: 30%;
+    height: 85%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#contenedorDetalleTratamiento{
+    /* border: 1px solid blue; */
+    float: right;
+    width: 68%;
+    height: 85%;
+}
+
+#contenedorRadioButton input[type='radio'], #contenedorRadioButton label {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+#contenedorRadioButton label, #contenedorDetalleTratamiento label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #061A9F;
+}
+
+#contenedorRadioButton textarea, #contenedorDetalleTratamiento textarea{
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    background-color: #ebebeb;
+    transition: background-color 0.3s ease-in-out;
+    height: 30px;
+    margin: 10px;
+    width: 70%;
+    height: 20%;
+}
+
+#contenedorRadioButton textarea:focus{
+    outline: none;
+    background-color: #cbefc9;
+}
+
+#contenedorDetalleTratamiento textarea {
+    width: 96.5%;
+    height: 82%;
+}
+
+#contenedorDetalleTratamiento textarea:focus{
+    outline: none;
+    background-color: #cbefc9;
+}
+
+
+
+#contenedorDetalleTratamiento input[type='button']{
+    background: #ebebeb;
+    width: 10%;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    transition: background-color 0.2s ease-in;
+    float: right;
+}
+
+#contenedorDetalleTratamiento input[type='button']:hover{
+    background-color: green;
+    cursor: pointer;
+    color: white;
+}
+
+#modalDetallePaciente input{
+    border-radius: 50px;
+    border: none;
+    background-color: #ebebeb;
+    transition: background-color 0.3s ease-in-out;
+    margin: 10px;
+    height: 30px;
+    width: 150px;
+}

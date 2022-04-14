@@ -91,7 +91,7 @@ body{
     font-size: 15px;
 }
 
-#registro input[type='submit']{
+#registro input[type='button']{
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 19px;
@@ -105,7 +105,7 @@ body{
     transition: color 0.3s ease-in-out;
 }
 
-#registro input[type='submit']:hover{
+#registro input[type='button']:hover{
     width: 150px;
     background-color: #93fbff;
     color: #061A9F;
@@ -176,7 +176,7 @@ body{
     width: 80%;
 }
 
-#modalRestablecerContra input[type='submit'], #modalPacienteNuevo input[type='submit']{
+#modalRestablecerContra input[type='button'], #modalPacienteNuevo input[type='button']{
     height: 40px;
     border-radius: 50px;
     border: none;
@@ -188,6 +188,13 @@ body{
     width: 150px;
     margin-left: 40px;
     cursor: pointer;
+}
+
+#modalRestablecerContra input[type='button']:hover, #modalPacienteNuevo input[type='button']:hover{
+    background-color: #93fbff;
+    color: #061A9F;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
 }
 
 /*Estilo específico ventana modal de Paciente Nuevo*/

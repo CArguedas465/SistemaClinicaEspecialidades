@@ -35,16 +35,17 @@
         <h1>Citas (P)</h1>
         <div id="content">
             <p>Para solicitar una cita, debe llenar el siguiente formulario:</p>
-            <form action="">
-                <form action="">
+                <form method="get" id="formularioSolicitudCita">
                     <label for="cedula">Cédula</label>
-                    <input type="text" name="cedula" id="cedula">
+                    <input type="number" name="cedula" id="cedula">
                     <label for="nombre">Nombre</label>
                     <input type="text" name="nombre" id="nombre">
                     <label for="apellido1">Primer Apellido</label>
                     <input type="text" name="apellido_1" id="apellido_1">
                     <label for="apellido2">Segundo Apellido</label>
-                    <input type="text" name="apellido_1" id="apellido_1">
+                    <input type="text" name="apellido_2" id="apellido_2">
+                    <label for="telefono">Número de Teléfono</label>
+                    <input type="number" name="telefono" id="telefono">
                     <label for="fecha">Fecha Ideal para su cita</label>
                     <input type="date" name="fecha" id="fecha">
                     <label for="urgente">Urgente</label>
@@ -62,10 +63,10 @@
                     <br>
                     <label for="descripcionAdicional">Descripción Adicional</label>
                     <textarea name="descripcionAdicional" id="descripcionAdicional" cols="30" rows="20"></textarea>
-                    <input type="submit" value="Enviar">
+                    <input type="button" value="Solicitar Cita" onclick="validar()">
                 </form>
-            </form>
         </div>
     </section>
 </body>
+<script src="../js/citasPaciente.js"></script>
 </html>

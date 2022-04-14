@@ -35,7 +35,7 @@
     <section>
         <h1>Citas (D)</h1>
         <div id="content">
-            <form method="get">
+            <form method="get" id="formularioBusqueda">
                 <label for="busqueda">Buscar Cita: </label>
                 <input type="text" id="busqueda" name="busqueda">
                 <label for="criterioBusqueda">Criterio Búsqueda: </label>
@@ -49,7 +49,7 @@
                     <option value="pacienteViejo">Paciente Viejo</option>
                     <option value="solicitante">Momento del Día</option>
                 </select>
-                <input type="submit" value="Buscar">
+                <input type="button" value="Buscar" onclick="validarBusqueda()">
             </form>
             <div class="contenedorConScroll">
                 <table cellspacing="0" id="tablaCitasPorAprobar">

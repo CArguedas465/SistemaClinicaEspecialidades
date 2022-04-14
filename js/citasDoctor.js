@@ -20,14 +20,17 @@ for (var i = 0; i < tabla.rows.length; i++)
 
 document.getElementById('btnDenegarCita').addEventListener("click", function() {
     document.getElementById('programadaODenegada').value = 0;
-    var form = document.getElementById('formularioProgramaCitas');
-    form.submit()
+    submit('formularioProgramaCitas');
 });
 
 document.getElementById('btnProgramarCita').addEventListener("click", function() {
-    document.getElementById('programadaODenegada').value = 1;
-    var form = document.getElementById('formularioProgramaCitas');
-    form.submit()
+    var resultado = validarCitaDoctor();
+
+    if (resultado){ 
+        document.getElementById('programadaODenegada').value = 1;
+        submit('formularioProgramaCitas'); 
+    }
+
 });
 
 
@@ -43,6 +46,7 @@ function tablaAEmergente(){
     descripcion = celdasFila.item(indiceF).cells.item(5).textContent;
     rangoHorario = celdasFila.item(indiceF).cells.item(6).textContent;
 
+    document.getElementById('tituloSolicitudDeCita').innerHTML = "Solicitud de cita # "+idDeSolicitud;
     document.getElementById('idDeSolicitud').value = idDeSolicitud;
     document.getElementById('solicitante').value = nombreSolicitante;
     document.getElementById('fechaIdeal').value = fechaSolicitada;
@@ -64,4 +68,38 @@ function emergente_DetalleCita_Abrir(){
 function emergente_DetalleCita_Cerrar(){
     var modal = document.getElementById('modalDetalleCita');
     modal.style.display = 'none';
+}
+
+
+function validarBusqueda(){
+    busqueda = document.getElementById('busqueda').value;
+    criterio = document.getElementById('criterioBusqueda').value;
+
+    if (busqueda == "" ||
+        criterio == "N/A")
+    {
+        alert("Se debe introducir una búsqueda y un criterio de búsqueda para continuar.");
+        return;
+    }
+
+    submit('formularioBusqueda');
+}
+
+function validarCitaDoctor(){
+    var fechaCita = document.getElementById('fecha').value;
+    var horaCita = document.getElementById('hora').value;
+
+    if (fechaCita == "" ||
+        horaCita == "")
+    {
+        alert ("Para aprobar una cita, se necesita como mínimo una hora y una fecha.")
+        return false;
+    }
+
+    return true;
+}
+
+function submit(nombreFormulario) {
+    var form = document.getElementById(nombreFormulario);
+    form.submit();
 }

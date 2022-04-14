@@ -22,10 +22,10 @@
     </div>
     <div id="registro">
         <h1>¡Hola!</h1>
-        <form action="post">
-            <input type="text" placeholder="ID DE USUARIO">
-            <input type="password" placeholder="CONTRASEÑA">
-            <input type="submit" value="LOG IN">
+        <form method="GET" id="formularioCredenciales">
+            <input type="text" placeholder="ID DE USUARIO" id="usuario" name="usuario">
+            <input type="password" placeholder="CONTRASEÑA" id="contra" name="contra">
+            <input type="button" value="LOG IN" onclick="validacionCredenciales()">
         </form>
         <button onclick="emergente_RestablecerContra_Abrir()">Olvidé mi contraseña</button>
         <button onclick="emergente_PacienteNuevo_Abrir()">Soy paciente nuevo</button>
@@ -39,16 +39,16 @@
             <span id="closeButton" class="closeButton" onclick="emergente_RestablecerContra_Cerrar()">&times;</span>
             <h2>Restablecer Contraseña</h2>
             <p>Responder a las siguientes preguntas de seguridad:</p>
-            <form action="">
+            <form action="" id="formularioRestablecerContra" method="get">
                 <h4 id="pregunta_1">N/A</h4>
-                <input type="text">
+                <input type="text" id="pregunta1_respuesta" name="pregunta1_respuesta">
                 <h4 id="pregunta_2">N/A</h4>
-                <input type="text">
+                <input type="text" id="pregunta2_respuesta" name="pregunta2_respuesta">
                 <h4 id="pregunta_3">N/A</h4>
-                <input type="text">
+                <input type="text" id="pregunta3_respuesta" name="pregunta3_respuesta">
                 <h4>Nueva contraseña: </h4>
-                <input type="password">
-                <input type="submit" value="Restablecer">
+                <input type="password" id="nuevaContra" name="nuevaContra">
+                <input type="button" value="Restablecer" onclick="validacionRestablecimientoContra()">
             </form>
         </div>
     </div>
@@ -60,15 +60,17 @@
             <span id="closeButton" class="closeButton" onclick="emergente_PacienteNuevo_Cerrar()">&times;</span>
             <h2>¡Envía una solicitud para tu primera consulta!</h2>
             <p>¡Envía una solicitud con tus datos personales, el día y la razón de tu consulta, y uno de los doctores se pondrá en contacto pronto!</p>
-            <form action="">
+            <form action="" id="formularioNuevoPaciente">
                 <label for="cedula">Cédula</label>
-                <input type="text" name="cedula" id="cedula">
+                <input type="number" name="cedula" id="cedula">
                 <label for="nombre">Nombre</label>
                 <input type="text" name="nombre" id="nombre">
-                <label for="apellido1">Primer Apellido</label>
+                <label for="apellido_1">Primer Apellido</label>
                 <input type="text" name="apellido_1" id="apellido_1">
-                <label for="apellido2">Segundo Apellido</label>
-                <input type="text" name="apellido_1" id="apellido_1">
+                <label for="apellido_2">Segundo Apellido</label>
+                <input type="text" name="apellido_2" id="apellido_2">
+                <label for="telefono">Número de Teléfono</label>
+                <input type="number" name="telefono" id="telefono">
                 <label for="fecha">Fecha Ideal para su cita</label>
                 <input type="date" name="fecha" id="fecha">
                 <label for="urgente">Urgente</label>
@@ -80,13 +82,13 @@
                 <label for="procedimiento">Procedimiento potencial</label>
                 <select name="procedimiento" id="procedimiento">
                     <option value="N/A">Seleccione una opción</option>
-                    <option value="1">Si</option>
-                    <option value="0">No</option>
+                    <option value="procedimiento1">Procedimiento 1</option>
+                    <option value="procedimiento2">Procedimiento 2</option>
                 </select>
                 <br>
                 <label for="descripcionAdicional">Descripción Adicional</label>
                 <textarea name="descripcionAdicional" id="descripcionAdicional" cols="30" rows="20"></textarea>
-                <input type="submit" value="Enviar">
+                <input type="button" value="Enviar" onclick="validacionSolicitudNuevoPaciente()">
             </form>
         </div>
     </div>

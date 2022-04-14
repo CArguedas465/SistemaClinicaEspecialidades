@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventario</title>
     <link rel="stylesheet" href="../css/estructuraEstilo.css">
+    <link rel="stylesheet" href="../css/inventarioEstilo.css">
 </head>
 <body>
     <nav>
@@ -32,6 +33,175 @@
     </nav>
     <section>
         <h1>Inventario</h1>
+        <div class="contenedorConScroll" style="border: 2px solid blue;">
+            <form action="" id="formularioInventario">
+                <div class="bloqueImagen">
+                    <img src="../images/photoPlaceholder.png" alt="">
+                    <input type="text" style="display: none;" id="codigoInstrumento1"> 
+                    <label>Instrumento # 7894521</label>
+                    <br>
+                    <label for="">Disponible</label>
+                    <input type="text" value="2" id="instrumento1" readonly >
+                    <input type="button" value="▲" id="aumentarInstrumento_1" onclick="aumentar(this.id)">
+                    <input type="button" value="▼" id="disminuirInstrumento_1" onclick="disminuir(this.id)">
+                </div>
+                <div class="bloqueImagen">
+                    <img src="../images/photoPlaceholder.png" alt="">
+                    <input type="text" style="display: none;" id="codigoInstrumento2">
+                    <label>Instrumento # 7894521</label>
+                    <br>
+                    <label for="">Disponible</label>
+                    <input type="text" value="4" id="instrumento2" readonly>
+                    <input type="button" value="▲" id="aumentarInstrumento_2" onclick="aumentar(this.id)">
+                    <input type="button" value="▼" id="disminuirInstrumento_2" onclick="disminuir(this.id)">
+                </div>
+                <div class="bloqueImagen">
+                    <img src="../images/photoPlaceholder.png" alt="">
+                    <input type="text" style="display: none;" id="codigoInstrumento3">
+                    <label>Instrumento # 7894521</label>
+                    <br>
+                    <label for="">Disponible</label>
+                    <input type="text" value="6" id="instrumento3" readonly>
+                    <input type="button" value="▲" id="aumentarInstrumento_3" onclick="aumentar(this.id)">
+                    <input type="button" value="▼" id="disminuirInstrumento_3" onclick="disminuir(this.id)">
+                </div>
+                <div class="bloqueImagen">
+                    <img src="../images/photoPlaceholder.png" alt="">
+                    <input type="text" style="display: none;" id="codigoInstrumento4">
+                    <label>Instrumento # 7894521</label>
+                    <br>
+                    <label for="">Disponible</label>
+                    <input type="text" value="10" id="instrumento4" readonly>
+                    <input type="button" value="▲" id="aumentarInstrumento_4" onclick="aumentar(this.id)">
+                    <input type="button" value="▼" id="disminuirInstrumento_4" onclick="disminuir(this.id)">
+                </div>
+                <div class="bloqueImagen">
+                    <img src="../images/photoPlaceholder.png" alt="">
+                    <input type="text" style="display: none;" id="codigoInstrumento5">
+                    <label>Instrumento # 7894521</label>
+                    <br>
+                    <label for="">Disponible</label>
+                    <input type="text" value="10" id="instrumento5" readonly>
+                    <input type="button" value="▲" id="aumentarInstrumento_5" onclick="aumentar(this.id)">
+                    <input type="button" value="▼" id="disminuirInstrumento_5" onclick="disminuir(this.id)">
+                </div>
+                <div class="bloqueImagen">
+                    <img src="../images/photoPlaceholder.png" alt="">
+                    <input type="text" style="display: none;" id="codigoInstrumento6">
+                    <label>Instrumento # 7894521</label>
+                    <br>
+                    <label for="">Disponible</label>
+                    <input type="text" value="10" id="instrumento6" readonly>
+                    <input type="button" value="▲" id="aumentarInstrumento_6" onclick="aumentar(this.id)">
+                    <input type="button" value="▼" id="disminuirInstrumento_6" onclick="disminuir(this.id)">
+                </div>
+                <div class="bloqueImagen">
+                    <img src="../images/photoPlaceholder.png" alt="">
+                    <input type="text" style="display: none;" id="codigoInstrumento7">
+                    <label>Instrumento # 7894521</label>
+                    <br>
+                    <label for="">Disponible</label>
+                    <input type="text" value="10" id="instrumento7" readonly>
+                    <input type="button" value="▲" id="aumentarInstrumento_7" onclick="aumentar(this.id)">
+                    <input type="button" value="▼" id="disminuirInstrumento_7" onclick="disminuir(this.id)">
+                </div>
+                <div class="bloqueImagen">
+                    <img src="../images/photoPlaceholder.png" alt="">
+                    <input type="text" style="display: none;" id="codigoInstrumento8">
+                    <label>Instrumento # 7894521</label>
+                    <br>
+                    <label for="">Disponible</label>
+                    <input type="text" value="10" id="instrumento8" readonly>
+                    <input type="button" value="▲" id="aumentarInstrumento_8" onclick="aumentar(this.id)"> 
+                    <input type="button" value="▼" id="disminuirInstrumento_8" onclick="disminuir(this.id)">
+                </div>
+                <div class="bloqueImagen">
+                    <img src="../images/photoPlaceholder.png" alt="">
+                    <input type="text" style="display: none;" id="codigoInstrumento9">
+                    <label>Instrumento # 7894521</label>
+                    <br>
+                    <label for="">Disponible</label>
+                    <input type="text" value="10" id="instrumento9" readonly>
+                    <input type="button" value="▲" id="aumentarInstrumento_9" onclick="aumentar(this.id)">
+                    <input type="button" value="▼" id="disminuirInstrumento_9" onclick="disminuir(this.id)">
+                </div>
+                <div class="bloqueImagen">
+                    <img src="../images/photoPlaceholder.png" alt="">
+                    <input type="text" style="display: none;" id="codigoInstrumento10">
+                    <label>Instrumento # 7894521</label>
+                    <br>
+                    <label for="">Disponible</label>
+                    <input type="text" value="10" id="instrumento10" readonly>
+                    <input type="button" value="▲" id="aumentarInstrumento_10" onclick="aumentar(this.id)">
+                    <input type="button" value="▼" id="disminuirInstrumento_10" onclick="disminuir(this.id)">
+                </div>
+                <div class="bloqueImagen">
+                    <img src="../images/photoPlaceholder.png" alt="">
+                    <input type="text" style="display: none;" id="codigoInstrumento11">
+                    <label>Instrumento # 7894521</label>
+                    <br>
+                    <label for="">Disponible</label>
+                    <input type="text" value="10" id="instrumento11" readonly>
+                    <input type="button" value="▲" id="aumentarInstrumento_11" onclick="aumentar(this.id)">
+                    <input type="button" value="▼" id="disminuirInstrumento_11" onclick="disminuir(this.id)">
+                </div>
+                <div class="bloqueImagen">
+                    <img src="../images/photoPlaceholder.png" alt="">
+                    <input type="text" style="display: none;" id="codigoInstrumento12">
+                    <label>Instrumento # 7894521</label>
+                    <br>
+                    <label for="">Disponible</label>
+                    <input type="text" value="10" id="instrumento12" readonly>
+                    <input type="button" value="▲" id="aumentarInstrumento_12" onclick="aumentar(this.id)">
+                    <input type="button" value="▼" id="disminuirInstrumento_12" onclick="disminuir(this.id)">
+                </div>
+                <div class="bloqueImagen">
+                    <img src="../images/photoPlaceholder.png" alt="">
+                    <input type="text" style="display: none;" id="codigoInstrumento13">
+                    <label>Instrumento # 7894521</label>
+                    <br>
+                    <label for="">Disponible</label>
+                    <input type="text" value="10" id="instrumento13" readonly>
+                    <input type="button" value="▲" id="aumentarInstrumento_13" onclick="aumentar(this.id)">
+                    <input type="button" value="▼" id="disminuirInstrumento_13" onclick="disminuir(this.id)">
+                </div>
+                <div class="bloqueImagen">
+                    <img src="../images/photoPlaceholder.png" alt="">
+                    <input type="text" style="display: none;" id="codigoInstrumento14">
+                    <label>Instrumento # 7894521</label>
+                    <br>
+                    <label for="">Disponible</label>
+                    <input type="text" value="10" id="instrumento14" readonly>
+                    <input type="button" value="▲" id="aumentarInstrumento_14" onclick="aumentar(this.id)">
+                    <input type="button" value="▼" id="disminuirInstrumento_14" onclick="disminuir(this.id)">
+
+                </div>
+                <div class="bloqueImagen">
+                    <img src="../images/photoPlaceholder.png" alt="">
+                    <input type="text" style="display: none;" id="codigoInstrumento15">
+                    <label>Instrumento # 7894521</label>
+                    <br>
+                    <label for="">Disponible</label>
+                    <input type="text" value="10" id="instrumento15" readonly>
+                    <input type="button" value="▲" id="aumentarInstrumento_15" onclick="aumentar(this.id)">
+                    <input type="button" value="▼" id="disminuirInstrumento_15" onclick="disminuir(this.id)">
+                </div>
+                <div class="bloqueImagen">
+                    <img src="../images/photoPlaceholder.png" alt="">
+                    <input type="text" style="display: none;" id="codigoInstrumento16">
+                    <label>Instrumento # 7894521</label>
+                    <br>
+                    <label for="">Disponible</label>
+                    <input type="text" value="10" id="instrumento16" readonly>
+                    <input type="button" value="▲" id="aumentarInstrumento_16" onclick="aumentar(this.id)">
+                    <input type="button" value="▼" id="disminuirInstrumento_16" onclick="disminuir(this.id)">
+                </div>
+            </form> 
+        </div>
+        <div id="botonActualizarContenedor">
+            <button>Actualizar</button> <!--Hacer submit del lado de javascript con este botón-->
+        </div>
     </section>
 </body>
+<script src="../js/inventario.js"></script>
 </html>

@@ -21,12 +21,19 @@
     text-align: center;
 }
 
-#content input[type='submit']{
+#content input[type='button']{
     float: right;
-    width: 85px;
+    width: 150px;
+    background-color: #ebebeb;
+    color: black;
+    letter-spacing: 0.5px;
+}
+
+
+#content input[type='button']:hover{
     background-color: #097D28;
     color: white;
-    letter-spacing: 0.5px;
+    cursor: pointer;
 }
 
 #content input[type='date']{
@@ -34,7 +41,7 @@
     text-align: center;
 }
 
-#content input:focus, #content select:focus, #content textarea:focus {
+#content input[type='date']:focus, #content input[type='text']:focus, #content select:focus, #content textarea:focus, #content input[type='number']:focus {
     outline: none;
     background-color: #cbefc9;
 }
