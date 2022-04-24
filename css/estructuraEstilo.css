@@ -70,7 +70,7 @@ section{
     width: 92.5%;
     height: 100%;
     display: inline;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
 }
 
 section h1, h2 {
