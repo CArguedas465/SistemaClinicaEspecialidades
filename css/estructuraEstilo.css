@@ -39,7 +39,7 @@ nav a {
     color: #fff;
     text-decoration: none;
     display: block;
-    margin: 20px 0px;
+    margin: 42px 0px;
     padding: 10px;
     letter-spacing: 2px;
     font-weight: bold;
@@ -61,6 +61,21 @@ nav a img:hover{
     padding: 15px;
 }
 
+nav button {
+    margin-top: 20px;
+    background-color: transparent;
+    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    border-radius: 20px;
+    transition: background-color 0.2s ease-in;
+}
+
+nav button:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
 #iconosNavegacion {
     margin-top: 35px;
 }
@@ -70,7 +85,7 @@ section{
     width: 92.5%;
     height: 100%;
     display: inline;
-    /*border: 1px solid red;*/
+    /* border: 1px solid red; */
 }
 
 section h1, h2 {

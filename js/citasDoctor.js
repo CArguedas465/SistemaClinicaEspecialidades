@@ -1,11 +1,13 @@
 var indiceF;
-var idDeSolicitud, 
+var idDeCita, 
     nombreSolicitante, 
-    fechaSolicitada, 
+    fecha, 
     procedimiento, 
     pacienteNuevo, 
     descripcion, 
-    rangoHorario;
+    hora,
+    urgente, 
+    doctorACargo;
     
 var tabla = document.getElementById('tablaCitasPorAprobar');
 
@@ -18,17 +20,29 @@ for (var i = 0; i < tabla.rows.length; i++)
         }
     }
 
-document.getElementById('btnDenegarCita').addEventListener("click", function() {
-    document.getElementById('programadaODenegada').value = 0;
-    submit('formularioProgramaCitas');
+document.getElementById('btnCancelarCita').addEventListener("click", function() {
+    document.getElementById('programada_OCancelada').value = 0;
+
+    $confirmacion = confirm("¿Seguro que desea cancelar la cita? Esta acción es final.");
+
+    if ($confirmacion)
+    {
+        submit('formularioProgramaCitas');
+    }
 });
 
-document.getElementById('btnProgramarCita').addEventListener("click", function() {
+document.getElementById('btnCambiarCita').addEventListener("click", function() {
     var resultado = validarCitaDoctor();
 
     if (resultado){ 
-        document.getElementById('programadaODenegada').value = 1;
-        submit('formularioProgramaCitas'); 
+        document.getElementById('programada_OCancelada').value = 1;
+
+        $confirmacion = confirm("¿Seguro que modificar la cita? Esta acción es final.");
+
+        if ($confirmacion)
+        {
+            submit('formularioProgramaCitas');
+        }
     }
 
 });
@@ -38,22 +52,24 @@ function tablaAEmergente(){
 
     var celdasFila = tabla.rows;
 
-    idDeSolicitud = celdasFila.item(indiceF).cells.item(0).textContent;
+    idDeCita = celdasFila.item(indiceF).cells.item(0).textContent;
     nombreSolicitante = celdasFila.item(indiceF).cells.item(1).textContent;
-    fechaSolicitada = celdasFila.item(indiceF).cells.item(2).textContent;
-    procedimiento = celdasFila.item(indiceF).cells.item(3).textContent;
-    pacienteNuevo = celdasFila.item(indiceF).cells.item(4).textContent;
-    descripcion = celdasFila.item(indiceF).cells.item(5).textContent;
-    rangoHorario = celdasFila.item(indiceF).cells.item(6).textContent;
-
-    document.getElementById('tituloSolicitudDeCita').innerHTML = "Solicitud de cita # "+idDeSolicitud;
-    document.getElementById('idDeSolicitud').value = idDeSolicitud;
-    document.getElementById('solicitante').value = nombreSolicitante;
-    document.getElementById('fechaIdeal').value = fechaSolicitada;
-    document.getElementById('procedimientoSolicitado').value = procedimiento;
-    document.getElementById('estadoPaciente').value = pacienteNuevo;
-    document.getElementById('rangoHorario').value = rangoHorario;
-    document.getElementById('comentariosPaciente').value = descripcion;
+    fecha = celdasFila.item(indiceF).cells.item(6).textContent;
+    hora = celdasFila.item(indiceF).cells.item(7).textContent;
+    procedimiento = celdasFila.item(indiceF).cells.item(2).textContent;
+    descripcion = celdasFila.item(indiceF).cells.item(3).textContent;
+    urgente = celdasFila.item(indiceF).cells.item(4).textContent;
+    doctorACargo = celdasFila.item(indiceF).cells.item(5).textContent;
+    
+    document.getElementById('tituloSolicitudDeCita').innerHTML = "Cita # "+idDeCita;
+    document.getElementById('id_Cita').value = idDeCita;
+    document.getElementById('_solicitante').value = nombreSolicitante;
+    document.getElementById('_fechaCita').value = fecha;
+    document.getElementById('_horaCita').value = hora;
+    document.getElementById('procedimiento_Solicitado').value = procedimiento;
+    document.getElementById('_comentariosPaciente').value = descripcion;
+    document.getElementById('_urgente').value = urgente;
+    document.getElementById('_doctorACargo').value = doctorACargo;
 }
 
 function emergente_DetalleCita_Abrir(){
@@ -66,6 +82,11 @@ function emergente_DetalleCita_Abrir(){
 
 
 function emergente_DetalleCita_Cerrar(){
+
+    document.getElementById('_fecha').value = '';
+    document.getElementById('_hora').value = '';
+    document.getElementById('_comentariosDoctor').value = '';
+
     var modal = document.getElementById('modalDetalleCita');
     modal.style.display = 'none';
 }
@@ -86,13 +107,13 @@ function validarBusqueda(){
 }
 
 function validarCitaDoctor(){
-    var fechaCita = document.getElementById('fecha').value;
-    var horaCita = document.getElementById('hora').value;
+    var fechaCita = document.getElementById('_fecha').value;
+    var horaCita = document.getElementById('_hora').value;
 
     if (fechaCita == "" ||
         horaCita == "")
     {
-        alert ("Para aprobar una cita, se necesita como mínimo una hora y una fecha.")
+        alert ("Para modificar una cita, se necesita como mínimo una hora y una fecha.")
         return false;
     }
 

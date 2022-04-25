@@ -132,8 +132,8 @@ tbody tr td:last-of-type{
 }
 
 #contenedorRadioButton input[type='radio'], #contenedorRadioButton label {
-    margin-top: 15px;
-    margin-bottom: 10px;
+    margin-top: 3px;
+    margin-bottom: 9px;
 }
 
 #contenedorRadioButton label, #contenedorDetalleTratamiento label {
@@ -151,6 +151,10 @@ tbody tr td:last-of-type{
     margin: 10px;
     width: 70%;
     height: 20%;
+}
+
+#contenedorRadioButton #alergia_Otros, #contenedorRadioButton #otros_Padecimientos{
+    height: 75px;
 }
 
 #contenedorRadioButton textarea:focus{
@@ -172,7 +176,7 @@ tbody tr td:last-of-type{
 
 #contenedorDetalleTratamiento input[type='button']{
     background: #ebebeb;
-    width: 10%;
+    width: 15%;
     height: 30px;
     border: none;
     border-radius: 15px;

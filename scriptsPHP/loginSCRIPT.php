@@ -102,8 +102,19 @@
         
         if ($coincidencias==1)
         {
-            echo '<script>alert("Autenticación exitosa. Ingresando al sistema...")</script>';
-            echo "<script>window.setTimeout(function() {window.location.href = '../html/principal.php';}, 0);</script>";
+            include_once '../clases/expedienteC.php';
+            include_once '../clases/paciente.php';
+
+            $expediente = new expedienteC();
+            $paciente = new paciente();
+            
+            $_SESSION["mostrarDetalleExpediente"]=''; 
+            $_SESSION["expedienteDetallado"]= serialize($expediente);
+            $_SESSION["mostrarDetallePaciente"] = ''; 
+            $_SESSION["pacienteConDetalle"] = serialize($paciente);
+
+            echo '<script>alert("Autenticación exitosa. Bienvenido al sistema, '.$idusuario.'...")</script>';
+            echo "<script>window.setTimeout(function() {window.location.href = '../html/citasDoctor.php';}, 0);</script>";
         } 
         else
         {

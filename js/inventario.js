@@ -22,8 +22,6 @@ function actualizarInventario()
 {
     var array = document.getElementsByClassName("instrumentos");
 
-    alert(array.length);
-
     var cont = 0;
 
     for (element of array)

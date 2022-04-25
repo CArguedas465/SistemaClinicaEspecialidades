@@ -211,8 +211,12 @@ table button:hover{
 }
 
 #contenedorRadioButton input[type='radio'], #contenedorRadioButton label {
-    margin-top: 15px;
-    margin-bottom: 10px;
+    margin-top: 6px !important;
+    margin-bottom: 10px !important;
+}
+
+#contenedorRadioButton #alergia_Otros, #contenedorRadioButton #otros_Padecimientos{
+    height: 75px;
 }
 
 #contenedorRadioButton label, #contenedorDetalleTratamiento label {

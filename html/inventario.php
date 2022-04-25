@@ -18,13 +18,10 @@
             <img src="../images/teethLogo.png" alt="">
         </div>
         <div id="iconosNavegacion">
-            <a href="principal.php">
-                <img src="../images/home.png" alt="">
-            </a>
-            <a href="citasDoctor.html"> <!--Esto debe dinamizarse con PHP para cargar la página de citas correcta.-->
+            <a href="citasDoctor.php"> 
                 <img src="../images/calendar.png" alt="">
             </a>
-            <a href="expediente.html">
+            <a href="expediente.php">
                 <img src="../images/expediente.png" alt="">
             </a>
             <a href="pacientes.php">
@@ -33,6 +30,8 @@
             <a href="inventario.php">
                 <img src="../images/inventario.png" alt="">
             </a>
+            <button onclick="cerrarSesion()">Cerrar Sesión</button>
+            <form id="formularioCerrarSesion" action="../scriptsPHP/cerrarSesionSCRIPT.php" style="display: none"></form>
         </div>
     </nav>
     <section>
@@ -75,4 +74,5 @@
     </section>
 </body>
 <script src="../js/inventario.js"></script>
+<script src="../js/controlSesion.js"></script>
 </html>

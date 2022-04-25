@@ -90,6 +90,9 @@ tbody tr:hover {
 
 tbody tr td {
     margin: 0px 15px;
+    white-space: nowrap;  
+    overflow: hidden; 
+    max-width: 200px;
 }
 
 tbody tr td:first-of-type{
@@ -136,13 +139,13 @@ tbody tr td:last-of-type{
     cursor: pointer;
 }
 
-#modalDetalleCita input[value='Denegar Cita']:hover{
+#modalDetalleCita input[value='Cancelar Cita']:hover{
     background-color: red;
     color: white;
     cursor: pointer;
 }
 
-#modalDetalleCita input[value='Programar Cita']:hover{
+#modalDetalleCita input[value='Cambiar Cita']:hover{
     background-color: green;
     color: white;
     cursor: pointer;
@@ -156,4 +159,37 @@ tbody tr td:last-of-type{
     position: fixed;
     left: 90%;
     bottom: 85%;
+}
+
+section h1{
+    position: relative;
+    left: 100px;
+    z-index: 0;
+    width: 1200px;
+}
+
+section a {
+    position: relative;
+    float: right;
+    right: 7%;
+    top: 5%;
+    width: 250px;
+    border-radius: 20px;
+    border: none;
+    background-color: #ebebeb;
+    transition: background-color 0.2s ease-in;  
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+section a:hover {
+    background-color: green;
+    cursor: pointer;
+    color: white;
 }
