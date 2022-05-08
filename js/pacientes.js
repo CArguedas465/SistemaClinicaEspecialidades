@@ -25,28 +25,35 @@ for (var i = 0; i < tabla.rows.length; i++)
 
 function bloquearRecomendacion(){
 
-    var recomendadoBool = document.getElementById('recomendadoBooleanNuevoPaciente');
+    var recomendadoBool = document.getElementById('recomendadoBoolean_NuevoPaciente');
 
     if(recomendadoBool.value=='false' || recomendadoBool.value=="N/A"){
-        var elemento = document.getElementById('recomendadoPacienteNuevo');
+        var elemento = document.getElementById('recomendado_PacienteNuevo');
         elemento.value = "";
         elemento.style.borderWidth = '1px';
         elemento.style.borderColor = '#f00';
         elemento.style.borderStyle = 'solid';
         elemento.disabled = true;
     } else {
-        var elemento = document.getElementById('recomendadoPacienteNuevo');
+        var elemento = document.getElementById('recomendado_PacienteNuevo');
         elemento.style.border = 'none';
         elemento.disabled = false;
     }
 }
 
 function emergente_DetallePaciente_Abrir(){
-    if (indiceC==4){
+    celdasFila = tabla.rows;
+
+    if (indiceC==4 && (celdasFila.item(indiceF).cells.item(indiceC).innerHTML == '<button class="crearExpedienteClick">Crear expediente</button>')){
         return;
     }
-    var modal = document.getElementById('modalDetallePaciente');
-    modal.style.display = 'block';
+
+    document.getElementById('cedulaPaciente_Detalle').value = celdasFila.item(indiceF).cells.item(0).textContent;
+    var form = document.getElementById('formularioDetallePaciente');
+    form.submit();
+
+    // var modal = document.getElementById('modalDetallePaciente');
+    // modal.style.display = 'block';
     
 }
 
@@ -66,6 +73,73 @@ function emergente_CrearExpediente_Abrir(){
 }
 
 function emergente_CrearExpediente_Cerrar(){
+    var diabetesColeccion = document.getElementsByName('diabetes');
+    for (var radio of diabetesColeccion){
+        if (radio.checked){
+            radio.checked = false;
+        }
+    }
+
+    var artritisColeccion = document.getElementsByName('artritis');
+    var artritisSeleccion = -1;
+    for (var radio of artritisColeccion){
+        if (radio.checked){
+            radio.checked = false;
+        }
+    }
+
+    var renalesColeccion = document.getElementsByName('renales');
+    var renalesSeleccion = -1;
+    for (var radio of renalesColeccion){
+        if (radio.checked){
+            radio.checked = false;
+        }
+    }
+
+    var alergiaAspirinaColeccion = document.getElementsByName('alergiaAspirina');
+    var alergiaAspirinaSeleccion = -1;
+    for (var radio of alergiaAspirinaColeccion){
+        if (radio.checked){
+            radio.checked = false;
+        }
+    }
+
+    var alergiaSulfasColeccion = document.getElementsByName('alergiaSulfas');
+    var alergiaSulfasSeleccion = -1;
+    for (var radio of alergiaSulfasColeccion){
+        if (radio.checked){
+            radio.checked = false;
+        }
+    }
+
+    var reaccionesAnestesiaColeccion = document.getElementsByName('reaccionesAnestesia');
+    var reaccionesAnestesiaSeleccion = -1;
+    for (var radio of reaccionesAnestesiaColeccion){
+        if (radio.checked){
+            radio.checked = false;
+        }
+    }
+
+    var sangradoProlongadoColeccion = document.getElementsByName('sangradoProlongado');
+    var sangradoProlongadoSeleccion = -1;
+    for (var radio of sangradoProlongadoColeccion){
+        if (radio.checked){
+            radio.checked = false;
+        }
+    }
+
+    var desmayosColeccion = document.getElementsByName('desmayos');
+    var desmayosSeleccion = -1;
+    for (var radio of desmayosColeccion){
+        if (radio.checked){
+            radio.checked = false;
+        }
+    }
+
+    document.getElementById('otros_Padecimientos').value = '';
+    document.getElementById('alergia_Otros').value = '';
+
+
     var modal = document.getElementById('modalPreguntasExpediente');
     modal.style.display = 'none';
 }
@@ -183,21 +257,25 @@ function validarCreacionExpediente(){
 }
 
 function validarAgregarPaciente(){
-    var cedula = document.getElementById('cedulaNuevoPaciente').value;
-    var nombre = document.getElementById('nombreNuevoPaciente').value;
-    var apellido1 = document.getElementById('apellido1NuevoPaciente').value;
-    var fechaNacimiento = document.getElementById('nacimientoNuevoPaciente').value;
-    var nacionalidad = document.getElementById('nacionalidadNuevoPaciente').value;
-    var telefono1 = document.getElementById('telefono1NuevoPaciente').value;
-    var telefono2 = document.getElementById('telefono2NuevoPaciente').value;
-    var ocupacion = document.getElementById('ocupacionNuevoPaciente').value;
-    var canton = document.getElementById('cantonNuevoPaciente').value;
-    var provincia = document.getElementById('provinciaNuevoPaciente').value;
-    var distrito = document.getElementById('distritoNuevoPaciente').value;
-    var apodo = document.getElementById('apodoNuevoPaciente').value;
-    var recomendadoBool = document.getElementById('recomendadoBooleanNuevoPaciente').value;
-    var recomendado = document.getElementById('recomendadoPacienteNuevo').value;
-    var detallesAdicionales = document.getElementById('detallesAdicionalesPacienteNuevo').value;
+
+    ;
+    document.getElementById('recomendacionAEnviar').value = document.getElementById('recomendado_PacienteNuevo').value;
+
+    var cedula = document.getElementById('cedula_NuevoPaciente').value;
+    var nombre = document.getElementById('nombre_NuevoPaciente').value;
+    var apellido1 = document.getElementById('apellido1_NuevoPaciente').value;
+    var fechaNacimiento = document.getElementById('nacimiento_NuevoPaciente').value;
+    var nacionalidad = document.getElementById('nacionalidad_NuevoPaciente').value;
+    var telefono1 = document.getElementById('telefono1_NuevoPaciente').value;
+    var telefono2 = document.getElementById('telefono2_NuevoPaciente').value;
+    var ocupacion = document.getElementById('ocupacion_NuevoPaciente').value;
+    var canton = document.getElementById('canton_NuevoPaciente').value;
+    var provincia = document.getElementById('provincia_NuevoPaciente').value;
+    var distrito = document.getElementById('distrito_NuevoPaciente').value;
+    var apodo = document.getElementById('apodo_NuevoPaciente').value;
+    var recomendadoBool = document.getElementById('recomendadoBoolean_NuevoPaciente').value;
+    var recomendado = document.getElementById('recomendado_PacienteNuevo').value;
+    var detallesAdicionales = document.getElementById('detallesAdicionales_PacienteNuevo').value;
 
     if (cedula == "" ||
         nombre == "" ||
@@ -237,18 +315,24 @@ function validarAgregarPaciente(){
         return;
     }
 
-    var regexAlf = /^[a-zA-z\u00C0-\u024F\u1E00-\u1EFF]+$/
+    var regexAlf = /^[a-zA-Z\u00C0-\u00FF]*$/
 
+    // alert(regexAlf.test(nombre)+" "+
+    //       regexAlf.test(apellido1)+" "+
+    //       regexAlf.test(nacionalidad)+" "+
+    //       regexAlf.test(ocupacion)+" "+
+    //       regexAlf.test(apodo)+" "+
+    //       regexAlf.test(recomendado));
+    alert("!!");
     if (!regexAlf.test(nombre) ||
         !regexAlf.test(apellido1) ||
         !regexAlf.test(nacionalidad) ||
         !regexAlf.test(ocupacion) || 
-        !regexAlf.test(canton) || 
-        !regexAlf.test(provincia) || 
-        !regexAlf.test(distrito) || 
         !regexAlf.test(apodo) ||
         !regexAlf.test(recomendado))
     {
+        // alert(nombre+", "+apellido1+", "+nacionalidad+", "+ocupacion+", "+canton+", "+provincia+", "+distrito+", "+apodo+", "+recomendado);
+        
         alert("Solo se aceptan caracteres especiales en el detalle adicional o en la extensión.");
         return;
     }

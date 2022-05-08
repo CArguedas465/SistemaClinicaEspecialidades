@@ -7,7 +7,7 @@
     display: inline-block;
     width: 250px;
     height: 270px;
-    border: 2px solid green;
+    /*border: 2px solid green;*/
     margin: 40px;
     margin-bottom: 0px;
     overflow: hidden;
@@ -49,17 +49,18 @@
 
 section h1 {
     margin: 15px;
+    margin-top: 5px;
 }
 
 section button{
     text-align: center;
     background: #ebebeb;
-    width: 10%;
+    width: 90%;
     height: 30px;
     border: none;
-    border-radius: 15px;
+    border-radius: 12px;
     transition: background-color 0.2s ease-in;
-    margin-top: 5px;
+    margin-top: 15px;
 }
 
 section button:hover{

@@ -7,8 +7,14 @@ function emergente_RestablecerContra_Abrir(){
     /*Hacer un submit acá, preguntar en la BD las preguntas de seguridad de ese ID, y ponerlas en variable global como respuesta. Volver a 
     imprimirlas en la ventana modal, y recargarla con la información de la variable global. Utilizar algún tipo de código que permita que la 
     ventana modal se muestre con display:block para que siga saliendo, y que cuando se haga el cambio, ya no se muestre.*/
-    var modal = document.getElementById('modalRestablecerContra');
-    modal.style.display = 'block';
+    
+    document.getElementById('modo_credenciales').value = '0';
+
+    var form =  document.getElementById('formularioCredenciales');
+    form.submit();
+
+    // var modal = document.getElementById('modalRestablecerContra');
+    // modal.style.display = 'block';
 }
 
 function emergente_RestablecerContra_Cerrar(){
@@ -27,8 +33,8 @@ function emergente_PacienteNuevo_Cerrar(){
 }
 
 function validacionCredenciales(){
-    var usuario = document.getElementById('usuario').value;
-    var contra = document.getElementById('contra').value;
+    var usuario = document.getElementsByName('usuario').value;
+    var contra = document.getElementsByName('contra').value;
 
     if (usuario == "" ||
         contra == "")
@@ -37,12 +43,15 @@ function validacionCredenciales(){
         return; 
     }
 
+    document.getElementById('modo_credenciales').value = "1";
+
     submit('formularioCredenciales');
 }
 
 function validacionRestablecimientoContra_UsuarioIntroducido(){
-    var usuario = document.getElementById('usuario').value;
-
+    
+    var usuario = document.getElementById('usuarioIni').value;
+    
     if (usuario==""){
         alert("Para restablecer contraseña, se debe indicar el nombre de usuario en el espacio 'ID DE USUARIO'");
         return false;
@@ -52,9 +61,9 @@ function validacionRestablecimientoContra_UsuarioIntroducido(){
 }
 
 function validacionRestablecimientoContra(){
-    var pregunta1 = document.getElementById('pregunta1_respuesta').value;
-    var pregunta2 = document.getElementById('pregunta2_respuesta').value;
-    var pregunta3 = document.getElementById('pregunta3_respuesta').value;
+    var pregunta1 = document.getElementById('p1').value;
+    var pregunta2 = document.getElementById('p2').value;
+    var pregunta3 = document.getElementById('p3').value;
 
     if (pregunta1 == "" ||
         pregunta2 == "" ||
@@ -64,7 +73,7 @@ function validacionRestablecimientoContra(){
         return;
     }
 
-    var nuevaContra = document.getElementById('nuevaContra').value;
+    var nuevaContra = document.getElementById('nContra').value;
 
     if(nuevaContra == ""){
         alert("Se debe introducir una contraseña nueva.");
@@ -73,16 +82,17 @@ function validacionRestablecimientoContra(){
 
     if (nuevaContra.length < 9){
         alert("La nueva contraseña debe tener como mínimo 8 caracteres.");
-        return;
+         return;
     }
 
     var regexContra = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
 
     if (!regexContra.test(nuevaContra)){
-        alert(nuevaContra);
         alert("La contraseña debe cumplir con los siguientes parámetros: \n\n -> Debe tener ocho o más caracteres \n -> Debe contener una o más mayúsculas \n -> Debe contener una o más minúsculas \n -> Debe contener uno o más valores numéricos \n -> Debe contener uno o más caracteres especiales");
         return;
     }
+
+    document.getElementById('modo_credenciales').value = '0.1';
 
     submit('formularioRestablecerContra');
 }

@@ -6,20 +6,21 @@ for (var i = 0; i < tabla.rows.length; i++)
 {
     tabla.rows[i].ondblclick = function()
     {
-        indiceF = this.rowIndex;
-        console.log(indiceF);
-        emergente_ModificarExpediente_Abrir();
+            indiceF = this.rowIndex;
+            console.log(indiceF);
     }
 }
 
 function emergente_ModificarExpediente_Abrir(){
 
-    document.getElementById('numeroExpediente').value = tabla.rows.item(indiceF).cells.item(0).textContent;
+    document.getElementById('numero_ExpedientePaciente').value = tabla.rows.item(indiceF).cells.item(0).textContent;
 
+    var form = document.getElementById('formularioDetalleExpediente');
+        form.submit();
     //alert(document.getElementById('numeroExpediente').value);
 
-    var modal = document.getElementById('modalModificacionExpediente');
-    modal.style.display = 'block';
+    // var modal = document.getElementById('modalModificacionExpediente');
+    // modal.style.display = 'block';
 }
 
 function emergente_ModificarExpediente_Cerrar(){
@@ -128,8 +129,12 @@ function validarModificacionExpediente(){
         return;
     }
 
-    submit('formularioModificacionExpediente');
+    $confirmacion = confirm("¿Está seguro que desea modificar el inventario?");
 
+    if ($confirmacion)
+    {
+        submit('formularioModificacionExpediente');
+    }
 }
 
 function submit(nombreFormulario){
