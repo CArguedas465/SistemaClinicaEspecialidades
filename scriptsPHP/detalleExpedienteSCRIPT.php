@@ -15,8 +15,8 @@
     $expediente -> setArtritis($datosExpediente["artritis"]);
     $expediente -> setTrastornosRenales($datosExpediente["trastornos_renales"]);
     $expediente -> setAlergiaAspirina($datosExpediente["alergia_aspirina"]);
-    $expediente -> setAlergiaSulfas($datosExpediente["diabetes"]);
-    $expediente -> setReaccionesAnestesia($datosExpediente["alergia_sulfas"]);
+    $expediente -> setAlergiaSulfas($datosExpediente["alergia_sulfas"]);
+    $expediente -> setReaccionesAnestesia($datosExpediente["reacciones_anestesia"]);
     $expediente -> setSangradoProlongado($datosExpediente["sangrado_prolongado"]);
     $expediente -> setDesmayos($datosExpediente["desmayos"]);
     $expediente -> setDetalleTratamiento($datosExpediente["detalle_tratamiento"]);
